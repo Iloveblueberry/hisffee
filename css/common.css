@@ -1,0 +1,462 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'The Jamsil 4';
+    src: url('TheJamsil4Medium.eot');
+    src: url('TheJamsil4Medium.eot?#iefix') format('embedded-opentype'),
+        url('TheJamsil4Medium.woff2') format('woff2'),
+        url('TheJamsil4Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 5';
+    src: url('TheJamsil5Bold.eot');
+    src: url('TheJamsil5Bold.eot?#iefix') format('e mbedded-opentype'),
+        url('TheJamsil5Bold.woff2') format('woff2'),
+        url('TheJamsil5Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 1';
+    src: url('TheJamsil1Thin.eot');
+    src: url('TheJamsil1Thin.eot?#iefix') format('embedded-opentype'),
+        url('TheJamsil1Thin.woff2') format('woff2'),
+        url('TheJamsil1Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 3';
+    src: url('TheJamsil3Regular.eot');
+    src: url('TheJamsil3Regular.eot?#iefix') format('embedded-opentype'),
+        url('TheJamsil3Regular.woff2') format('woff2'),
+        url('TheJamsil3Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 6';
+    src: url('TheJamsil6ExtraBold.eot');
+    src: url('TheJamsil6ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('TheJamsil6ExtraBold.woff2') format('woff2'),
+        url('TheJamsil6ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 2';
+    src: url('TheJamsil2Light.eot');
+    src: url('TheJamsil2Light.eot?#iefix') format('embedded-opentype'),
+        url('TheJamsil2Light.woff2') format('woff2'),
+        url('TheJamsil2Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+    font-family: 'The Jamsil 6';
+    color: #333;
+}
+
+.fp-arrow.fp-prev {
+    border-width: 0px;
+}
+
+.fp-arrow.fp-next {
+    border-width: 0px;
+}
+
+.mobile {
+    display: none;
+}
+
+header {
+    position: fixed;
+    z-index: 9;
+    height: 100px;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+}
+
+header .menu_bg {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    display: none;
+}
+
+header .inner {
+    max-width: 1440px;
+    width: calc(100% - 30px);
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .inner h1 {
+    height: 60px;
+}
+
+header .inner h1 img {
+    height: 60px;
+}
+
+header .inner .pc .depth01:hover > a {
+    color: #955108;
+}
+
+header .inner .pc .depth01 {
+    font-family: 'The Jamsil 6';
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 9;
+}
+
+header .inner .pc .depth01>a {
+    display: block;
+    padding: 0 30px;
+    line-height: 100px;
+}
+
+/* 🎀메뉴라인 효과🎀 */
+header .inner .pc .depth01>a::after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #955108;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    z-index: 999;
+    position: relative;
+    top: -4px;
+}
+
+header .inner .pc .depth01>a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* 🎀메뉴라인 효과 end🎀 */
+
+header .inner .pc .depth01 .depth02 {
+    font-family: 'The Jamsil 4';
+    font-size: 14px;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    display: none;
+}
+
+
+header .inner .pc .depth01 .depth02 li {
+    text-align: center;
+    padding: 10px;
+}
+
+header .inner .pc .depth01 .depth02 li:nth-child(1) {
+    margin-top: 10px;
+}
+
+
+/* 🎀2차메뉴 라인효과🎀 */
+header .inner .pc .depth01 .depth02 li a {
+    position: relative;
+}
+
+header .inner .pc .depth01 .depth02 a:hover::before {
+    left: 0;
+    right: 0;
+}
+
+header .inner .pc .depth01 .depth02 a::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: -3px;
+    background: #955108;
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out; 
+}
+
+/* 🎀2차메뉴 라인효과 end🎀 */
+
+header .inner .pc_user li {
+    display: inline-block;
+}
+
+header .inner .pc_user li img {
+    vertical-align: middle;
+}
+header .inner .pc_user li:nth-child(1) a {
+    font-family: 'The Jamsil 3'; 
+    vertical-align: middle;
+}
+
+header .inner .pc_user li:nth-child(1) img {
+    height: 30px;
+}
+
+header .inner .pc_user li span {
+    padding-left: 10px;
+}
+
+/* #fullpage {
+    height: 100vh;
+} */
+
+#fullpage .section .slide img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 🎈footer🎈 */
+.footer {
+    max-width: 1920px;
+    width: 100%;
+    color: #fff;
+     padding: 80px 0;
+     background-color:#5a3228 ;
+}
+
+.footer .inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer .inner img {
+    width: 123px;
+    height: 140px;
+}
+
+.footer .inner .text {
+    margin-left: 100px;
+}
+
+.footer .inner .text ul:nth-child(1) {
+    margin-bottom: 50px;
+}
+
+
+.footer .inner .text ul {
+    margin-bottom: 15px;
+}
+
+.footer .inner .text .law li {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'The Jamsil 5';
+    position: relative;
+    margin-right: 15px;
+}
+
+.footer .inner .text .law li:nth-child(1)::after{
+    content: '';
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.footer .inner .text .name li {
+    display: inline-block;
+    font-family: 'The Jamsil 3';
+    position: relative;
+    margin-right: 15px;
+}
+
+
+.footer .inner .text .name li:nth-child(1)::after {
+    content: '';
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.footer .inner .text .name li:nth-child(2)::after {
+    content: '';
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 0;
+} 
+
+
+
+.footer .inner .text .info li {
+    display: inline-block;
+    font-family: 'The Jamsil 3';
+    position: relative;
+    margin-right: 15px;
+}
+
+.footer .inner .text .info li:nth-child(1)::after {
+    content: '';
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.footer .inner .text .info li:nth-child(2)::after {
+    content: '';
+    width: 2px;
+    height: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.footer .inner .text p {
+    font-family: 'The Jamsil 2';
+}
+
+
+
+
+/* 🎨media query🎨 */
+
+@media screen and (max-width:980px) {
+    .pc {display: none;}
+    .mobile{display: block;}
+
+    header {height: 60px;}
+    header .inner {
+        line-height: 60px;
+        text-align: center;
+    }
+    header .inner h1 {height: 50px;}
+    header .inner h1 img {height: 50px;}
+
+
+    /* mobile_menu btn */
+    .mobile_menu {
+        cursor: pointer;}
+
+    .mobile_menu span {
+        width: 30px;
+        height: 3px;
+        background-color: #955108;
+        display: block;
+        margin: 5px 0;
+        transition: 1s;
+        position: relative;
+        z-index: 99;
+    }
+
+    .mobile_menu.on span:nth-child(2) {
+        display: none;
+    }
+
+    .mobile_menu.on span:nth-child(1) {
+        background-color: #955108;
+        transform: translateY(5px) rotate(-45deg);
+        position: relative;
+        z-index: 9999;
+    }
+
+    .mobile_menu.on span:nth-child(3) {
+        position: relative;
+        z-index: 9999;
+        background-color: #955108;
+        transform: translateY(-3px) rotate(45deg);
+    } 
+    /* mobile_menu btn end */
+
+
+    header .mobile_gnb {
+        position: fixed;
+        left:0;
+        top: 0px;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 9;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 100px;
+        display: none;
+    }
+
+    header .mobile_gnb .depth01 {
+   
+    }
+
+    header .mobile_gnb .depth01 .depth02 {
+        font-family: 'The Jamsil 4';
+        font-size: 16px;
+        background-color: rgba(255, 214, 131, 0.3);
+        color: #955108;
+        display: none;
+    }
+
+    header .mobile_user li{
+        display: inline-block;
+        margin-top: 50px;
+        margin-right: 10px;
+    }
+
+    header .inner .mobile_user li img {
+        vertical-align: middle;
+    }
+
+    header .mobile_user li:nth-child(1) img {
+        height: 40px;
+    }
+
+      
+    header .inner .mobile_user li:nth-child(1) a {
+        font-family: 'The Jamsil 3'; 
+        vertical-align: middle;
+    }
+
+    header .mobile_user li:nth-child(2) img {
+        height: 40px;
+    }
+
+    footer {
+        padding: 80px 30px;
+    }
+
+}

@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "D:/Yeana/프로젝트/룰루레몬"
+		},
+		{
+			"path": "../../../html/깃"
+		},
+		{
+			"path": "../../../html"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../연습/스미스티도안"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "히스피"
+	}
+}

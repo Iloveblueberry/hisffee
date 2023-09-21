@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISFFEE COFFEE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="lib/fullpage.min.css">
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <!-- jquery -->
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/fullpage.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                $('#fullpage').fullpage({
+                    //sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#5a3228'],
+                    //loopBottom: true,
+                    responsiveWidth: 980, 
+                    afterLoad: function (origin, destination, direction) {
+                        //section 2
+                        if (destination.index == 3) {
+                            document.querySelector('.store').querySelector('.store1').style.left = 0 + 'px';
+                            document.querySelector('.store').querySelector('.right').style.right = 0 + 'px';
+
+                        }
+
+                        //back to original state
+                        else if (origin && origin.index == 3) {
+                            document.querySelector('.store').querySelector('.store1').style.left = -100 + '%';
+                            document.querySelector('.store').querySelector('.right').style.right = -100 + '%';
+                        }
+
+
+                    },//store
+                    afterRender: function () {
+                        setInterval(function () {
+                            $.fn.fullpage.moveSlideRight();
+                        }, 2000);
+                    }
+                });
+            });//main_visual
+
+            var swiper = new Swiper(".mySwiper", {
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                slidesPerView: 1,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    414: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                     
+                    500: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    981: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    },
+                    1441: {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                    },
+
+                },
+            });//best_menu
+
+            //🎈header menu🎈
+            $('.pc .depth01').mouseenter(function () {
+                $('header .menu_bg').stop().slideDown()
+            })
+
+            $('.depth01').mouseleave(function () {
+                $('header .menu_bg').stop().slideUp()
+            })//menu_bg
+
+            $('.pc .depth01').mouseenter(function () {
+                $('header .inner .pc .depth01 .depth02').stop().slideDown()
+            })
+
+            $('.depth01').mouseleave(function () {
+                $('header .inner .pc .depth01 .depth02').stop().slideUp()
+            })
+
+
+            //🎈모바일 메뉴
+            let mobileBtn = $('.mobile_menu');
+            let mobileNav = $('.mobile_gnb');
+
+            mobileBtn.click(function () {
+                if (mobileNav.css('display') == 'none') {
+                    mobileBtn.addClass('on')
+                    mobileNav.stop().slideDown()
+                } else {
+                    mobileBtn.removeClass('on')
+                    mobileNav.stop().slideUp()
+                }
+
+            })
+
+            $('.mobile_gnb .depth01 > a').click(function () {
+                if ($(this).next().css('display') == 'none') {
+                    $('.mobile_gnb .depth02').slideUp()
+                    $(this).next().slideDown()
+                } else {
+                    $('.mobile_gnb .depth02').slideUp()
+                }
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <img src="img/logo/히스피헤더로고.png" alt="">
+                </a>
+            </h1>
+
+            <nav class="pc pc_gnb">
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">BRAND</a>
+                        <ul class="depth02">
+                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="#">인테리어</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">FRANCHISE</a>
+                        <ul class="depth02">
+                            <li><a href="#">경쟁력</a></li>
+                            <li><a href="#">가맹문의</a></li>
+                            <li><a href="#">가맹절차</a></li>
+                            <li><a href="#">가맹비용</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">MENU</a>
+                        <ul class="depth02">
+                            <li><a href="#">SIGNATURE</a></li>
+                            <li><a href="#">COFFEE</a></li>
+                            <li><a href="#">TEA</a></li>
+                            <li><a href="#">BEVERAGE</a></li>
+                            <li><a href="#">FRAPPEE</a></li>
+                            <li><a href="#">DESSERT</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">STORE</a>
+                        <ul class="depth02">
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">COMMUNUTY</a>
+                        <ul class="depth02">
+                            <li><a href="#">NOTICE</a></li>
+                            <li><a href="#">NEWS</a></li>
+                            <li><a href="#">제휴 및 문의</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb -->
+            </nav><!-- .pc_gnb -->
+
+            <ul class="pc pc_user">
+                <li>
+                    <img src="img/logo/점주공간로고.png" alt="">
+                    <a href="#">점주공간</a>
+                </li>
+                <li>
+                    <span>
+                        <a href="https://www.instagram.com/hisffee/">
+                            <img src="img/logo/icons8-instagram-30.png" alt="">
+                        </a>
+                    </span>
+                </li>
+            </ul><!-- .pc_user end -->
+
+            <!-- 🎈mobile🎈 -->
+            <div class="mobile mobile_menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .mobile_menu -->
+
+            <nav class="mobile mobile_gnb">
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">BRAND</a>
+                        <ul class="depth02">
+                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="#">인테리어</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">FRANCHISE</a>
+                        <ul class="depth02">
+                            <li><a href="#">경쟁력</a></li>
+                            <li><a href="#">가맹문의</a></li>
+                            <li><a href="#">가맹절차</a></li>
+                            <li><a href="#">가맹비용</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">MENU</a>
+                        <ul class="depth02">
+                            <li><a href="#">전체메뉴</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">STORE</a>
+                        <ul class="depth02">
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">오시는길</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">COMMUNUTY</a>
+                        <ul class="depth02">
+                            <li><a href="#">NOTICE</a></li>
+                            <li><a href="#">NEWS</a></li>
+                            <li><a href="#">제휴 및 문의</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb -->
+
+                <ul class="mobile mobile_user">
+                    <li>
+                        <img src="img/logo/점주공간로고.png" alt="">
+                        <a href="#">점주공간</a>
+                    </li>
+                    <li>
+                        <span>
+                            <a href="https://www.instagram.com/hisffee/">
+                                <img src="img/logo/icons8-instagram-30.png" alt="">
+                            </a>
+                        </span>
+                    </li>
+                </ul><!-- .mobile_user end -->
+            </nav><!-- .mobile_gnb -->
+
+        </div><!-- .inner end -->
+
+        <!-- ✨pc_menu_bg✨ -->
+        <div class="pc menu_bg"></div><!-- .menu_bg -->
+
+
+
+    </header>
+
+
+
+    <div id="fullpage">
+        <div class="section">
+            <div class="main_visual">
+                <div class="slide" data-anchor="slide1">
+                    <a href="#">
+                        <img src="img/main_web/시그니처메뉴.jpg" alt="">
+                        <img src="img/main_tablet/시그니처1440.png" alt="">
+                        <img src="img/main_mobile/시그니처음료.jpg" alt="">
+                    </a>
+                </div>
+                <div class="slide" data-anchor="slide2">
+                    <a href="#">
+                        <img src="img/main_web/가을신메뉴.jpg" alt="">
+                        <img src="img/main_tablet/가을신메뉴1440.png" alt="">
+                        <img src="img/main_mobile/가을신메뉴.jpg" alt="">
+                    </a>
+                </div>
+                <div class="slide" data-anchor="slide3">
+                    <a href="#">
+                        <img src="img/main_web/쑥음료.jpg" alt="">
+                        <img src="img/main_tablet/쑥음료1440.png" alt="">
+                        <img src="img/main_mobile/레트로에빠진쑥스피.jpg" alt="">
+                    </a>
+                </div>
+                <div class="slide" data-anchor="slide4">
+                    <a href="#">
+                        <img src="img/main_web/샌드위치.jpg" alt="">
+                        <img src="img/main_tablet/잠봉뵈르1440.png" alt="">
+                        <img src="img/main_mobile/잠봉뵈르샌드위치.jpg" alt="">
+                    </a>
+                </div>
+            </div><!-- .main_visual end -->
+        </div><!-- auto slide -->
+
+        <div class="section brand">
+            <div class="brand_story">
+                <div class="text">
+                    <div class="inner">
+                        <h4>BRNAD STORY</h4>
+                        <div>
+                            <img src="img/logo/할아버지로고.png" alt="">
+                        </div>
+                        <h1>HAPPINESS in SMILE,<br>
+                            HISFFEECOFFEE & DESSERT</h1>
+                        <p>좋은 품질의 메뉴 제공, 친근한 분위기를 연출하여<br>
+                            히스피만의 브랜드 이미지를<br>만들어 나가겠습니다.</p>
+                        <a href="#">
+                            <span>히스피 이야기</span>
+                        </a>
+                    </div><!-- .inner end -->
+                </div><!-- .text end -->
+
+                <div class="drink">
+                    <div class="row">
+                        <div class="list">
+                            <ul class="left">
+                                <li>
+                                    <img src="img/브랜드소개/list/left/딸기라떼.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/바닐라빈라떼.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/블루베리라떼.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/솔트슈페너.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/스윗캐모마일티.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/쑥떡크림프라페.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/옥스피.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/패션후르츠히비스커스티.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/흑당시나몬라떼.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/left/흑임자크림프라페.png" alt="">
+                                </li>
+                            </ul><!-- .left end -->
+                            <ul class="right">
+                                <li>
+                                    <img src="img/브랜드소개/list/right/복숭아라떼.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/생자몽에이드.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/숙취해소박카프라페.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/인절미프라페.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/청포도에이드.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/코코넛스무디커피.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/패션후르츠에이드.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/히스틱쿠앤크크림프라페.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/히스피블랙.png" alt="">
+                                </li>
+                                <li>
+                                    <img src="img/브랜드소개/list/right/히스피조리퐁크림프라페.png" alt="">
+                                </li>
+                            </ul><!-- .right end -->
+
+                        </div><!-- .list end -->
+                    </div><!-- .row end -->
+
+                </div><!-- .drink end -->
+            </div><!-- .brand story -->
+        </div><!-- .brand -->
+
+        <div class="section best_menu">
+            <div class="inner">
+                <h2>HISFFEE'S &nbsp<span>BEST MENU</span></h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div>
+                                <a href="#">
+                                    <figure>
+                                        <img src="img/베스트아이템/딸기바나나프라페.png" alt="">
+                                    </figure>
+                                    <div class="title">
+                                        <h5>딸기 바나나프라페</h5>
+                                        <p>STRAWBERRY BANANA<br>FRAPPE</p>
+                                    </div><!-- .title end -->
+                                </a>
+                            </div>
+                        </div><!-- slide1 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/라임청에이드.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>라임청 에이드</h5>
+                                    <p>LIME ADE</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide2 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/망고바나나프라페.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>망고 바나나 프라페</h5>
+                                    <p>MANGO BANANA FRAPPE</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide3 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/블루베리라떼.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>블루베리 라떼</h5>
+                                    <p>BLUEBERRY LATTE</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide4 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/솔트슈페너.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>솔트 슈페너</h5>
+                                    <p>SALT SPANNER</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide5 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/스윗캐모마일티.png" alt="">
+                                </figure>
+                                <div class="title chamomile">
+                                    <h5>스윗 캐모마일티</h5>
+                                    <p>SWEET CHAMOMILE TEA</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide6 end-->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/패션후르츠히비스커스티.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>패션후르츠 히비스커스티</h5>
+                                    <p>PASSION FRUIT<br>
+                                        HIBISCUS TEA</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide7 end -->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/흑당시나몬라떼.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>흑당 시나몬라떼</h5>
+                                    <p>BROWN SUGAR<br>
+                                        CINNAMON LATTE</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide8 end -->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/흑임자크림프라페.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>흑임자 크림프라페</h5>
+                                    <p>BLACK SESAME<br>
+                                        CREAM FRAPPE</p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide9 end -->
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <figure>
+                                    <img src="img/베스트아이템/10.바닐라빈라떼.png" alt="">
+                                </figure>
+                                <div class="title">
+                                    <h5>바닐라빈 라떼</h5>
+                                    <p>VANILLABEAN LATTE<br>
+                                        (HANDMADE)
+                                    </p>
+                                </div><!-- .title end -->
+                            </a>
+                        </div><!-- slide10 end -->
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .swiper -->
+            </div><!-- .inner end -->
+        </div><!-- .best_menu -->
+
+
+        <div class="section store">
+            <div class="inner">
+                <h2>매장 안내</h2>
+                <div class="cont">
+                    <div class="left">
+                        <div>
+                            <img class="store1" src="img/매장안내/왼쪽매장_web.png" alt="">
+                            <img src="img/매장안내/음료사진_모바일.png" alt="">
+                        </div>
+                    </div><!-- .left end -->
+                    <div class="right">
+                        <div>
+                            <img src="img/매장안내/오른쪽매장_web.png" alt="">
+                            <img src="img/매장안내/매장사진_모바일.png" alt="">
+                            <div class="text">
+                                <div class="title">
+                                    <h3>전국 <span>50여개</span><br>
+                                        지점 <span>OPEN</span>
+                                    </h3>
+                                    <p>가까운 히스피 매장에서 여유를 즐겨보세요.</p>
+                                </div><!-- .title end -->
+                                <div class="search">
+                                    <input type="text" placeholder="매장명 검색">
+                                    <img src="img/logo/돋보기 (2).png" alt="">
+                                </div><!-- .search end -->
+                            </div><!-- .text end -->
+                        </div>
+                    </div><!-- .right end -->
+                </div><!-- .cont end -->
+            </div><!-- .inner end -->
+        </div><!-- .store end -->
+
+
+        <div class="section sns">
+            <div class="inner">
+                <div class="title">
+                    <h2>HISFFEE'S &nbsp;<span>SNS</span></h2>
+                    <figure>
+                        <a href="https://www.instagram.com/hisffee/">
+                            <img src="img/logo/icons8-instagram-60.png" alt="">
+                        </a>
+                    </figure>
+                </div><!-- .title end -->
+                <div class="list">
+                    <div class="item">
+                        <a href="https://www.instagram.com/p/CsQZFezL9yw/">
+                            <img src="img/히스피sns/히스피잠봉뵈르베이글.jpg" alt="">
+                            <div class="hover_text">
+                                <p>
+                                    베이글 잠봉뵈르 2종이 출시 되었습니다!<br>
+                                    더 부드럽고 쫄깃해진 베이글 잠봉뵈르를<br>
+                                    히스피 전 매장에서 만나보세요.
+                                </p>
+                            </div><!-- .hover_text end -->
+                        </a>
+                    </div><!-- .item end -->
+                    <div class="item">
+                        <a href="https://www.instagram.com/p/CsQZIFnL_3G/?img_index=1">
+                            <img src="img/히스피sns/히스피크로아상.jpg" alt="">
+                            <div class="hover_text">
+                                <p>
+                                    부드럽고 촉촉한 크로와상에 매장에서 직접 제조한<br>
+                                    다양한 수제 크림과 토핑이 가득 들어있는 한끼 대용<br>
+                                    디저트가 출시 되었습니다.<br>
+                                    히스피 전 매장에서 만나보실 수 있습니다.</p>
+                            </div><!-- .hover_text end -->
+                        </a>
+                    </div><!-- .item end -->
+
+                    <div class="item">
+                        <a href="https://www.instagram.com/p/CrZqm91PWx_/?img_index=1">
+                            <img src="img/히스피sns/연제점그랜드오픈.jpg" alt="">
+                            <div class="hover_text">
+                                <p>
+                                    도심속의 휴양지 히스피!<br>
+                                    부산 연제점에서도 만나보세요.<br>
+                                    히스피 연제점<br>
+                                    부산 연제구 거제천로87번길 30 연제그린타워
+                                </p>
+                            </div><!-- .hover_text end -->
+                        </a>
+                    </div><!-- .item end -->
+
+                    <div class="item">
+                        <a href="https://www.instagram.com/p/Crc3E2Wro_v/?img_index=1">
+                            <img src="img/히스피sns/히스피프랜차이즈뉴스.jpg" alt="">
+                            <div class="hover_text event">
+                                <img src="img/히스피sns/히스피빅이벤트.jpg" alt="">
+                            </div><!-- .hover_text end -->
+                        </a>
+                    </div><!-- .item end -->
+                </div><!-- .list end -->
+            </div><!-- .inner end -->
+        </div><!-- sns end -->
+
+        <footer class="section fp-auto-height footer">
+            <div class="inner">
+                <img src="img/logo/푸터로고.png" alt="푸터로고">
+                <div class="text">
+                    <ul class="law">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul><!-- .law end -->
+                    <ul class="name">
+                        <li>법인명 : HISFFEE COFFEE&DESSERT</li>
+                        <li>CEO: Han SangIn</li>
+                        <li>주소 : 부산광역시 동구 중앙대로 373-1 2층</li>
+                    </ul><!-- .name end -->
+                    <ul class="info">
+                        <li>사업자 등록번호 : 427-81-02463</li>
+                        <li><a href="#">대표전화 : 1533-0921</a></li>
+                        <li>E-mail : hisffeecoffee@naver.com</li>
+                    </ul><!-- .info end -->
+                    <p>ⓒ 2022 HISFFEE Coffee & Dessert. ALL RIGHTS RESERVED.</p>
+                </div><!-- .text_end -->
+
+            </div><!-- .inner end -->
+        </footer>
+    </div><!-- #fullpage -->
+</body>
+
+</html>
