@@ -22,9 +22,11 @@
                 $('#fullpage').fullpage({
                     //sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff', '#5a3228'],
                     //loopBottom: true,
-                    responsiveWidth: 980, 
+                    responsiveWidth: 980,
+                    anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],
                     afterLoad: function (origin, destination, direction) {
                         //section 2
+
                         if (destination.index == 3) {
                             document.querySelector('.store').querySelector('.store1').style.left = 0 + 'px';
                             document.querySelector('.store').querySelector('.right').style.right = 0 + 'px';
@@ -33,12 +35,13 @@
 
                         //back to original state
                         else if (origin && origin.index == 3) {
-                            document.querySelector('.store').querySelector('.store1').style.left = -100 + '%';
-                            document.querySelector('.store').querySelector('.right').style.right = -100 + '%';
-                        }
+                             document.querySelector('.store').querySelector('.store1').style.left = -100 + '%';
+                             document.querySelector('.store').querySelector('.right').style.right = -100 + '%';
+                         }
 
 
                     },//store
+
                     afterRender: function () {
                         setInterval(function () {
                             $.fn.fullpage.moveSlideRight();
@@ -48,10 +51,10 @@
             });//main_visual
 
             var swiper = new Swiper(".mySwiper", {
-                autoplay: {
-                    delay: 2000,
-                    disableOnInteraction: false,
-                },
+                 autoplay: {
+                     delay: 2000,
+                     disableOnInteraction: false,
+                 },
                 slidesPerView: 1,
                 spaceBetween: 30,
                 pagination: {
@@ -63,8 +66,8 @@
                         slidesPerView: 1,
                         spaceBetween: 10,
                     },
-                     
-                    500: {
+
+                    440: {
                         slidesPerView: 2,
                         spaceBetween: 20,
                     },
@@ -128,16 +131,39 @@
             })
 
 
-        })
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 500) {
+                    $('.top_mobile').fadeIn();
+                } else {
+                    $('.top_mobile').fadeOut();
+                }
+            });
+
+            $(".top_mobile").click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });// top_mobile
+
+            
+            $(document).on('click', '.top_pc', function () {
+                fullpage_api.moveTo('page1', 1);
+            });
+
+        })//jquery end
     </script>
 </head>
 
 <body>
+    <a class="mobile top_mobile" href="#">top</a><!-- top_btn -->
+    <a class="pc top_pc" href="#">top</a><!-- top_btn -->
     <header>
         <div class="inner">
             <h1>
                 <a href="#">
-                    <img src="img/logo/히스피헤더로고.png" alt="">
+                    <img src="img/logo/히스피헤더로고.png" alt="로고">
                 </a>
             </h1>
 
@@ -196,13 +222,13 @@
 
             <ul class="pc pc_user">
                 <li>
-                    <img src="img/logo/점주공간로고.png" alt="">
+                    <img src="img/logo/점주공간로고.png" alt="점주공간로고">
                     <a href="#">점주공간</a>
                 </li>
                 <li>
                     <span>
                         <a href="https://www.instagram.com/hisffee/">
-                            <img src="img/logo/icons8-instagram-30.png" alt="">
+                            <img src="img/logo/icons8-instagram-30.png" alt="인스타그램">
                         </a>
                     </span>
                 </li>
@@ -264,13 +290,13 @@
 
                 <ul class="mobile mobile_user">
                     <li>
-                        <img src="img/logo/점주공간로고.png" alt="">
+                        <img src="img/logo/점주공간로고.png" alt="점주공간로고">
                         <a href="#">점주공간</a>
                     </li>
                     <li>
                         <span>
                             <a href="https://www.instagram.com/hisffee/">
-                                <img src="img/logo/icons8-instagram-30.png" alt="">
+                                <img src="img/logo/icons8-instagram-30.png" alt="인스타그램">
                             </a>
                         </span>
                     </li>
@@ -281,42 +307,38 @@
 
         <!-- ✨pc_menu_bg✨ -->
         <div class="pc menu_bg"></div><!-- .menu_bg -->
-
-
-
     </header>
 
 
-
     <div id="fullpage">
-        <div class="section">
+        <div class="section main">
             <div class="main_visual">
                 <div class="slide" data-anchor="slide1">
                     <a href="#">
-                        <img src="img/main_web/시그니처메뉴.jpg" alt="">
-                        <img src="img/main_tablet/시그니처1440.png" alt="">
-                        <img src="img/main_mobile/시그니처음료.jpg" alt="">
+                        <img src="img/main_web/시그니처메뉴.jpg" alt="시그니처메뉴">
+                        <img src="img/main_tablet/시그니처메뉴.jpg" alt="시그니처메뉴">
+                        <img src="img/main_mobile/시그니처음료.jpg" alt="모바일시그니처메뉴">
                     </a>
                 </div>
                 <div class="slide" data-anchor="slide2">
                     <a href="#">
-                        <img src="img/main_web/가을신메뉴.jpg" alt="">
-                        <img src="img/main_tablet/가을신메뉴1440.png" alt="">
-                        <img src="img/main_mobile/가을신메뉴.jpg" alt="">
+                        <img src="img/main_web/가을신메뉴.jpg" alt="가을신메뉴">
+                        <img src="img/main_tablet/가을신메뉴.jpg" alt="태블릿가을신메뉴">
+                        <img src="img/main_mobile/가을신메뉴.jpg" alt="모바일가을신메뉴">
                     </a>
                 </div>
                 <div class="slide" data-anchor="slide3">
                     <a href="#">
-                        <img src="img/main_web/쑥음료.jpg" alt="">
-                        <img src="img/main_tablet/쑥음료1440.png" alt="">
-                        <img src="img/main_mobile/레트로에빠진쑥스피.jpg" alt="">
+                        <img src="img/main_web/쑥음료.jpg" alt="쑥음료">
+                        <img src="img/main_tablet/쑥음료.jpg" alt="태블릿쑥음료">
+                        <img src="img/main_mobile/레트로에빠진쑥스피.jpg" alt="모바일쑥음료">
                     </a>
                 </div>
                 <div class="slide" data-anchor="slide4">
                     <a href="#">
-                        <img src="img/main_web/샌드위치.jpg" alt="">
-                        <img src="img/main_tablet/잠봉뵈르1440.png" alt="">
-                        <img src="img/main_mobile/잠봉뵈르샌드위치.jpg" alt="">
+                        <img src="img/main_web/샌드위치2.jpg" alt="샌드위치">
+                        <img src="img/main_tablet/샌드위치.jpg" alt="태블릿샌드위치">
+                        <img src="img/main_mobile/잠봉뵈르샌드위치.jpg" alt="모바일샌드위치">
                     </a>
                 </div>
             </div><!-- .main_visual end -->
@@ -334,9 +356,11 @@
                             HISFFEECOFFEE & DESSERT</h1>
                         <p>좋은 품질의 메뉴 제공, 친근한 분위기를 연출하여<br>
                             히스피만의 브랜드 이미지를<br>만들어 나가겠습니다.</p>
-                        <a href="#">
-                            <span>히스피 이야기</span>
-                        </a>
+
+                        <div class="brand_btn">
+                            <a href="#">히스피 이야기</a>
+                        </div><!-- .brand_btn end -->
+
                     </div><!-- .inner end -->
                 </div><!-- .text end -->
 
@@ -345,34 +369,34 @@
                         <div class="list">
                             <ul class="left">
                                 <li>
-                                    <img src="img/브랜드소개/list/left/딸기라떼.png" alt="">
+                                    <img src="img/브랜드소개/list/left/딸기라떼.png" alt="딸기라떼">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/바닐라빈라떼.png" alt="">
+                                    <img src="img/브랜드소개/list/left/바닐라빈라떼.png" alt="바닐라빈라떼">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/블루베리라떼.png" alt="">
+                                    <img src="img/브랜드소개/list/left/블루베리라떼.png" alt="블루베리라떼">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/솔트슈페너.png" alt="">
+                                    <img src="img/브랜드소개/list/left/솔트슈페너.png" alt="솔트슈페너">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/스윗캐모마일티.png" alt="">
+                                    <img src="img/브랜드소개/list/left/스윗캐모마일티.png" alt="스윗캐모마일티">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/쑥떡크림프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/left/쑥떡크림프라페.png" alt="쑥떡크림프라페">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/옥스피.png" alt="">
+                                    <img src="img/브랜드소개/list/left/옥스피.png" alt="옥스피">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/패션후르츠히비스커스티.png" alt="">
+                                    <img src="img/브랜드소개/list/left/패션후르츠히비스커스티.png" alt="패션후르츠히비스커스티">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/흑당시나몬라떼.png" alt="">
+                                    <img src="img/브랜드소개/list/left/흑당시나몬라떼.png" alt="흑당시나몬라떼">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/left/흑임자크림프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/left/흑임자크림프라페.png" alt="흑임자크림프라페">
                                 </li>
                             </ul><!-- .left end -->
                             <ul class="right">
@@ -380,31 +404,31 @@
                                     <img src="img/브랜드소개/list/right/복숭아라떼.png" alt="">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/생자몽에이드.png" alt="">
+                                    <img src="img/브랜드소개/list/right/생자몽에이드.png" alt="복숭아라떼">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/숙취해소박카프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/right/숙취해소박카프라페.png" alt="숙취해소박카프라페">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/인절미프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/right/인절미프라페.png" alt="인절미프라페">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/청포도에이드.png" alt="">
+                                    <img src="img/브랜드소개/list/right/청포도에이드.png" alt="청포도에이드">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/코코넛스무디커피.png" alt="">
+                                    <img src="img/브랜드소개/list/right/코코넛스무디커피.png" alt="코코넛스무디커피">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/패션후르츠에이드.png" alt="">
+                                    <img src="img/브랜드소개/list/right/패션후르츠에이드.png" alt="패션후르츠에이드">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/히스틱쿠앤크크림프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/right/히스틱쿠앤크크림프라페.png" alt="쿠앤크프림프라페">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/히스피블랙.png" alt="">
+                                    <img src="img/브랜드소개/list/right/히스피블랙.png" alt="히스피블랙">
                                 </li>
                                 <li>
-                                    <img src="img/브랜드소개/list/right/히스피조리퐁크림프라페.png" alt="">
+                                    <img src="img/브랜드소개/list/right/히스피조리퐁크림프라페.png" alt="조리퐁크림프라페">
                                 </li>
                             </ul><!-- .right end -->
 
@@ -424,7 +448,7 @@
                             <div>
                                 <a href="#">
                                     <figure>
-                                        <img src="img/베스트아이템/딸기바나나프라페.png" alt="">
+                                        <img src="img/베스트아이템/딸기바나나프라페.png" alt="딸기바나나프라페">
                                     </figure>
                                     <div class="title">
                                         <h5>딸기 바나나프라페</h5>
@@ -436,7 +460,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/라임청에이드.png" alt="">
+                                    <img src="img/베스트아이템/라임청에이드.png" alt="라임청에이드">
                                 </figure>
                                 <div class="title">
                                     <h5>라임청 에이드</h5>
@@ -447,7 +471,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/망고바나나프라페.png" alt="">
+                                    <img src="img/베스트아이템/망고바나나프라페.png" alt="망고바나나프라페">
                                 </figure>
                                 <div class="title">
                                     <h5>망고 바나나 프라페</h5>
@@ -458,7 +482,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/블루베리라떼.png" alt="">
+                                    <img src="img/베스트아이템/블루베리라떼.png" alt="블루베리라떼">
                                 </figure>
                                 <div class="title">
                                     <h5>블루베리 라떼</h5>
@@ -469,7 +493,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/솔트슈페너.png" alt="">
+                                    <img src="img/베스트아이템/솔트슈페너.png" alt="솔트슈페너">
                                 </figure>
                                 <div class="title">
                                     <h5>솔트 슈페너</h5>
@@ -480,7 +504,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/스윗캐모마일티.png" alt="">
+                                    <img src="img/베스트아이템/스윗캐모마일티.png" alt="스윗캐모마일티">
                                 </figure>
                                 <div class="title chamomile">
                                     <h5>스윗 캐모마일티</h5>
@@ -491,7 +515,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/패션후르츠히비스커스티.png" alt="">
+                                    <img src="img/베스트아이템/패션후르츠히비스커스티.png" alt="패션후르츠히비스커스티">
                                 </figure>
                                 <div class="title">
                                     <h5>패션후르츠 히비스커스티</h5>
@@ -503,7 +527,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/흑당시나몬라떼.png" alt="">
+                                    <img src="img/베스트아이템/흑당시나몬라떼.png" alt="흑당시나몬라떼">
                                 </figure>
                                 <div class="title">
                                     <h5>흑당 시나몬라떼</h5>
@@ -515,7 +539,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/흑임자크림프라페.png" alt="">
+                                    <img src="img/베스트아이템/흑임자크림프라페.png" alt="흑임자크림프라페">
                                 </figure>
                                 <div class="title">
                                     <h5>흑임자 크림프라페</h5>
@@ -527,7 +551,7 @@
                         <div class="swiper-slide">
                             <a href="#">
                                 <figure>
-                                    <img src="img/베스트아이템/10.바닐라빈라떼.png" alt="">
+                                    <img src="img/베스트아이템/10.바닐라빈라떼.png" alt="바닐라빈라떼">
                                 </figure>
                                 <div class="title">
                                     <h5>바닐라빈 라떼</h5>
@@ -549,14 +573,14 @@
                 <div class="cont">
                     <div class="left">
                         <div>
-                            <img class="store1" src="img/매장안내/왼쪽매장_web.png" alt="">
-                            <img src="img/매장안내/음료사진_모바일.png" alt="">
+                            <img class="store1" src="img/매장안내/왼쪽매장_web.png" alt="매장사진">
+                            <img src="img/매장안내/음료사진_모바일.png" alt="히스피음료3종">
                         </div>
                     </div><!-- .left end -->
                     <div class="right">
                         <div>
-                            <img src="img/매장안내/오른쪽매장_web.png" alt="">
-                            <img src="img/매장안내/매장사진_모바일.png" alt="">
+                            <img src="img/매장안내/오른쪽매장_web.png" alt="매장사진">
+                            <img src="img/매장안내/매장사진_모바일.png" alt="모바일매장사진">
                             <div class="text">
                                 <div class="title">
                                     <h3>전국 <span>50여개</span><br>
@@ -566,7 +590,7 @@
                                 </div><!-- .title end -->
                                 <div class="search">
                                     <input type="text" placeholder="매장명 검색">
-                                    <img src="img/logo/돋보기 (2).png" alt="">
+                                    <img src="img/logo/돋보기 (2).png" alt="검색아이콘">
                                 </div><!-- .search end -->
                             </div><!-- .text end -->
                         </div>
@@ -582,14 +606,14 @@
                     <h2>HISFFEE'S &nbsp;<span>SNS</span></h2>
                     <figure>
                         <a href="https://www.instagram.com/hisffee/">
-                            <img src="img/logo/icons8-instagram-60.png" alt="">
+                            <img src="img/logo/icons8-instagram-60.png" alt="인스타그램">
                         </a>
                     </figure>
                 </div><!-- .title end -->
                 <div class="list">
                     <div class="item">
                         <a href="https://www.instagram.com/p/CsQZFezL9yw/">
-                            <img src="img/히스피sns/히스피잠봉뵈르베이글.jpg" alt="">
+                            <img src="img/히스피sns/히스피잠봉뵈르베이글.jpg" alt="sns베이글">
                             <div class="hover_text">
                                 <p>
                                     베이글 잠봉뵈르 2종이 출시 되었습니다!<br>
@@ -601,7 +625,7 @@
                     </div><!-- .item end -->
                     <div class="item">
                         <a href="https://www.instagram.com/p/CsQZIFnL_3G/?img_index=1">
-                            <img src="img/히스피sns/히스피크로아상.jpg" alt="">
+                            <img src="img/히스피sns/히스피크로아상.jpg" alt="sns크로아상">
                             <div class="hover_text">
                                 <p>
                                     부드럽고 촉촉한 크로와상에 매장에서 직접 제조한<br>
@@ -614,7 +638,7 @@
 
                     <div class="item">
                         <a href="https://www.instagram.com/p/CrZqm91PWx_/?img_index=1">
-                            <img src="img/히스피sns/연제점그랜드오픈.jpg" alt="">
+                            <img src="img/히스피sns/연제점그랜드오픈.jpg" alt="sns연제점오픈">
                             <div class="hover_text">
                                 <p>
                                     도심속의 휴양지 히스피!<br>
@@ -628,9 +652,9 @@
 
                     <div class="item">
                         <a href="https://www.instagram.com/p/Crc3E2Wro_v/?img_index=1">
-                            <img src="img/히스피sns/히스피프랜차이즈뉴스.jpg" alt="">
+                            <img src="img/히스피sns/히스피프랜차이즈뉴스.jpg" alt="히스피뉴스">
                             <div class="hover_text event">
-                                <img src="img/히스피sns/히스피빅이벤트.jpg" alt="">
+                                <img src="img/히스피sns/히스피빅이벤트.jpg" alt="히스피빅이벤트">
                             </div><!-- .hover_text end -->
                         </a>
                     </div><!-- .item end -->
@@ -641,6 +665,7 @@
         <footer class="section fp-auto-height footer">
             <div class="inner">
                 <img src="img/logo/푸터로고.png" alt="푸터로고">
+                <img src="img/logo/할아버지로고.png" alt="텍스트없는로고">
                 <div class="text">
                     <ul class="law">
                         <li><a href="#">개인정보처리방침</a></li>
