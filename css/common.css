@@ -1,10 +1,11 @@
 @charset "utf-8";
+
 @font-face {
     font-family: 'The Jamsil 4';
-    src: url('TheJamsil4Medium.eot');
-    src: url('TheJamsil4Medium.eot?#iefix') format('embedded-opentype'),
-        url('TheJamsil4Medium.woff2') format('woff2'),
-        url('TheJamsil4Medium.woff') format('woff');
+    src: url('font/TheJamsil4Medium.eot');
+    src: url('font/TheJamsil4Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/TheJamsil4Medium.woff2') format('woff2'),
+        url('font/TheJamsil4Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -12,10 +13,10 @@
 
 @font-face {
     font-family: 'The Jamsil 5';
-    src: url('TheJamsil5Bold.eot');
-    src: url('TheJamsil5Bold.eot?#iefix') format('e mbedded-opentype'),
-        url('TheJamsil5Bold.woff2') format('woff2'),
-        url('TheJamsil5Bold.woff') format('woff');
+    src: url('font/TheJamsil5Bold.eot');
+    src: url('font/TheJamsil5Bold.eot?#iefix') format('e mbedded-opentype'),
+        url('font/TheJamsil5Bold.woff2') format('woff2'),
+        url('font/TheJamsil5Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -23,10 +24,10 @@
 
 @font-face {
     font-family: 'The Jamsil 1';
-    src: url('TheJamsil1Thin.eot');
-    src: url('TheJamsil1Thin.eot?#iefix') format('embedded-opentype'),
-        url('TheJamsil1Thin.woff2') format('woff2'),
-        url('TheJamsil1Thin.woff') format('woff');
+    src: url('font/TheJamsil1Thin.eot');
+    src: url('font/TheJamsil1Thin.eot?#iefix') format('embedded-opentype'),
+        url('font/TheJamsil1Thin.woff2') format('woff2'),
+        url('font/TheJamsil1Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -34,10 +35,10 @@
 
 @font-face {
     font-family: 'The Jamsil 3';
-    src: url('TheJamsil3Regular.eot');
-    src: url('TheJamsil3Regular.eot?#iefix') format('embedded-opentype'),
-        url('TheJamsil3Regular.woff2') format('woff2'),
-        url('TheJamsil3Regular.woff') format('woff');
+    src: url('font/TheJamsil3Regular.eot');
+    src: url('font/TheJamsil3Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/TheJamsil3Regular.woff2') format('woff2'),
+        url('font/TheJamsil3Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -45,10 +46,10 @@
 
 @font-face {
     font-family: 'The Jamsil 6';
-    src: url('TheJamsil6ExtraBold.eot');
-    src: url('TheJamsil6ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('TheJamsil6ExtraBold.woff2') format('woff2'),
-        url('TheJamsil6ExtraBold.woff') format('woff');
+    src: url('font/TheJamsil6ExtraBold.eot');
+    src: url('font/TheJamsil6ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('font/TheJamsil6ExtraBold.woff2') format('woff2'),
+        url('font/TheJamsil6ExtraBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -56,10 +57,10 @@
 
 @font-face {
     font-family: 'The Jamsil 2';
-    src: url('TheJamsil2Light.eot');
-    src: url('TheJamsil2Light.eot?#iefix') format('embedded-opentype'),
-        url('TheJamsil2Light.woff2') format('woff2'),
-        url('TheJamsil2Light.woff') format('woff');
+    src: url('font/TheJamsil2Light.eot');
+    src: url('font/TheJamsil2Light.eot?#iefix') format('embedded-opentype'),
+        url('font/TheJamsil2Light.woff2') format('woff2'),
+        url('font/TheJamsil2Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -121,7 +122,7 @@ header .inner h1 img {
     height: 60px;
 }
 
-header .inner .pc .depth01:hover > a {
+header .inner .pc .depth01:hover>a {
     color: #955108;
 }
 
@@ -142,10 +143,10 @@ header .inner .pc .depth01>a {
 
 /* 🎀메뉴라인 효과🎀 */
 header .inner .pc .depth01>a::after {
-    display:block;
+    display: block;
     content: '';
-    border-bottom: solid 3px #955108;  
-    transform: scaleX(0);  
+    border-bottom: solid 3px #955108;
+    transform: scaleX(0);
     transition: transform 250ms ease-in-out;
     z-index: 999;
     position: relative;
@@ -203,7 +204,7 @@ header .inner .pc .depth01 .depth02 a::before {
     height: 2px;
     transition-property: left, right;
     transition-duration: 0.3s;
-    transition-timing-function: ease-out; 
+    transition-timing-function: ease-out;
 }
 
 /* 🎀2차메뉴 라인효과 end🎀 */
@@ -215,8 +216,9 @@ header .inner .pc_user li {
 header .inner .pc_user li img {
     vertical-align: middle;
 }
+
 header .inner .pc_user li:nth-child(1) a {
-    font-family: 'The Jamsil 3'; 
+    font-family: 'The Jamsil 3';
     vertical-align: middle;
 }
 
@@ -238,14 +240,13 @@ header .inner .pc_user li span {
 }
 
 
-
 /* 🎈footer🎈 */
 .footer {
     max-width: 1920px;
     width: 100%;
     color: #fff;
-     padding: 80px 0;
-     background-color:#5a3228 ;
+    padding: 80px 30px;
+    background-color: #5a3228;
 }
 
 .footer .inner {
@@ -258,6 +259,10 @@ header .inner .pc_user li span {
 .footer .inner img {
     width: 123px;
     height: 140px;
+}
+
+.footer .inner img:nth-child(2) {
+    display: none;
 }
 
 .footer .inner .text {
@@ -281,9 +286,9 @@ header .inner .pc_user li span {
     margin-right: 15px;
 }
 
-.footer .inner .text .law li:nth-child(1)::after{
+.footer .inner .text .law li:nth-child(1)::after {
     content: '';
-    width: 2px;
+    width: 1px;
     height: 18px;
     background-color: #fff;
     position: absolute;
@@ -301,7 +306,7 @@ header .inner .pc_user li span {
 
 .footer .inner .text .name li:nth-child(1)::after {
     content: '';
-    width: 2px;
+    width: 1px;
     height: 18px;
     background-color: #fff;
     position: absolute;
@@ -311,13 +316,13 @@ header .inner .pc_user li span {
 
 .footer .inner .text .name li:nth-child(2)::after {
     content: '';
-    width: 2px;
+    width: 1px;
     height: 18px;
     background-color: #fff;
     position: absolute;
     right: -10px;
     top: 0;
-} 
+}
 
 
 
@@ -330,7 +335,7 @@ header .inner .pc_user li span {
 
 .footer .inner .text .info li:nth-child(1)::after {
     content: '';
-    width: 2px;
+    width: 1px;
     height: 18px;
     background-color: #fff;
     position: absolute;
@@ -340,7 +345,7 @@ header .inner .pc_user li span {
 
 .footer .inner .text .info li:nth-child(2)::after {
     content: '';
-    width: 2px;
+    width: 1px;
     height: 18px;
     background-color: #fff;
     position: absolute;
@@ -352,27 +357,88 @@ header .inner .pc_user li span {
     font-family: 'The Jamsil 2';
 }
 
+.top_pc {
+    position: fixed;
+    right: 2%;
+    bottom: 50px;
+    z-index: 999;
+    width: 70px;
+    height: 70px;
+    background: url('../img/logo/top_arrow.png') center center no-repeat;
+    background-color: #efe8e3;
+    /* 아랫쪽에 있는 코드가 우선순위가 되므로 background보다 background-color를
+    아래쪽에 위치 시켜야 함
+    반대로 위치시킬 경우=> background-color 안먹힘 */
+    border-radius: 8px;
+    text-indent: -999em;
+    display: block;
+}
+
+.top_pc:hover {
+    background-color: #ffc485;
+    transition: 1s;
+}
 
 
+/* fp-viewing-1 #top_btn,
+fp-viewing-2 #top_btn,
+fp-viewing-3 #top_btn,
+fp-viewing-4 #top_btn, {
+    display:block;
+} */
 
 /* 🎨media query🎨 */
 
 @media screen and (max-width:980px) {
-    .pc {display: none;}
-    .mobile{display: block;}
+    .pc {
+        display: none;
+    }
 
-    header {height: 60px;}
+    .mobile {
+        display: block;
+    }
+
+
+    /* ✨top_btn mobile✨ */
+    .top_mobile {
+        position: fixed;
+        right: 2%;
+        bottom: 50px;
+        z-index: 999;
+        width: 50px;
+        height: 50px;
+        background: url('../img/logo/top_arrow.png') center center no-repeat;
+        background-color: #efe8e3;
+        /* 아랫쪽에 있는 코드가 우선순위가 되므로 background보다 background-color를
+        아래쪽에 위치 시켜야 함
+        반대로 위치시킬 경우=> background-color 안먹힘 */
+        border-radius: 8px;
+        text-indent: -999em;
+        display: none;
+    }
+
+
+    header {
+        height: 60px;
+    }
+
     header .inner {
-        line-height: 60px;
         text-align: center;
     }
-    header .inner h1 {height: 50px;}
-    header .inner h1 img {height: 50px;}
+
+    header .inner h1 {
+        height: 50px;
+    }
+
+    header .inner h1 img {
+        height: 50px;
+    }
 
 
     /* mobile_menu btn */
     .mobile_menu {
-        cursor: pointer;}
+        cursor: pointer;
+    }
 
     .mobile_menu span {
         width: 30px;
@@ -401,37 +467,44 @@ header .inner .pc_user li span {
         z-index: 9999;
         background-color: #955108;
         transform: translateY(-3px) rotate(45deg);
-    } 
+    }
+
     /* mobile_menu btn end */
 
 
     header .mobile_gnb {
         position: fixed;
-        left:0;
+        left: 0;
         top: 0px;
         width: 100%;
         height: 100vh;
+        padding: 100px 0;
         background-color: #fff;
         z-index: 9;
-        font-size: 20px;
+        font-size: 17px;
         text-align: center;
-        padding-top: 100px;
         display: none;
     }
 
     header .mobile_gnb .depth01 {
-   
+        padding: 10px 0;
     }
 
     header .mobile_gnb .depth01 .depth02 {
+        margin: 10px 0;
         font-family: 'The Jamsil 4';
-        font-size: 16px;
+        font-size: 15px;
         background-color: rgba(255, 214, 131, 0.3);
         color: #955108;
         display: none;
     }
 
-    header .mobile_user li{
+    header .mobile_gnb .depth01 .depth02 li {
+        padding: 10px 0;
+    }
+
+
+    header .mobile_user li {
         display: inline-block;
         margin-top: 50px;
         margin-right: 10px;
@@ -445,9 +518,9 @@ header .inner .pc_user li span {
         height: 40px;
     }
 
-      
+
     header .inner .mobile_user li:nth-child(1) a {
-        font-family: 'The Jamsil 3'; 
+        font-family: 'The Jamsil 3';
         vertical-align: middle;
     }
 
