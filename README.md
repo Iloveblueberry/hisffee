@@ -3,7 +3,7 @@
 https://iloveblueberry.github.io/hisffee/
 
 <br>
-<h4>Web(1920px) 버전</h4>
+<h4>Web(1920px)/테블릿(960px)/모바일(414px)</h4>
 <img src="https://github.com/Iloveblueberry/hisffee/assets/116944280/bad801f8-46a4-45c0-80f3-f105e30379b6"  width="600" height="1200"/>
 
 
